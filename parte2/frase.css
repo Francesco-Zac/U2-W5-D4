@@ -33,7 +33,7 @@ main {
 #testoAlternato p {
   position: relative;
   font-size: 2rem;
-  line-height: 1.4;
+  line-height: 1;
   color: #333;
   text-align: left;
 }
@@ -43,8 +43,8 @@ main {
   display: block;
   width: 500px;
   position: absolute;
-  bottom: 6px;
-  right: -146px;
+  bottom: -6px;
+  right: -148px;
   overflow: hidden;
   height: 2.4rem;
 }
