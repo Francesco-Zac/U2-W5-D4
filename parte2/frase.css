@@ -1,0 +1,102 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+body {
+  font-family: "Bree Serif", serif;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Contenitore del testo */
+#testoAlternato {
+  border: 1px solid #555;
+  padding: 30px;
+  background-color: white;
+}
+
+#testoAlternato p {
+  position: relative;
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #333;
+  text-align: left;
+}
+
+/* Configurazione parole rotanti */
+.parole {
+  display: block;
+  width: 500px;
+  position: absolute;
+  bottom: 6px;
+  right: -146px;
+  overflow: hidden;
+  height: 2.4rem;
+}
+
+/* Stile singola parola animata */
+.parole i {
+  color: #3498db;
+  position: absolute;
+  opacity: 0;
+  font-style: normal;
+  width: 100%;
+  left: 0;
+
+  /* Configura l'animazione */
+  animation: cicloParole 9s linear infinite;
+}
+
+/* Imposta i ritardi per ciascuna parola */
+.parole i:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.parole i:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.parole i:nth-child(3) {
+  animation-delay: 6s;
+}
+
+/* Definizione dell'animazione */
+@keyframes cicloParole {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  2% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  27% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  33% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
